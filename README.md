@@ -1,5 +1,6 @@
-#Developer
-##Arvind kumar
+# Developer
+
+## Arvind kumar
 
 
 1.This project is made to ezplore anhular more with angular material design library 
