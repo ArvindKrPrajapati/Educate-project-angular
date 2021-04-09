@@ -1,0 +1,13 @@
+<div class="main">
+  <mat-card class="roadmap-card">
+    <h2>{{question}}</h2>
+    <p class="answer">
+      {{answer}}
+    </p>
+  </mat-card>
+  <br><br>
+  <h2>start your learning journey</h2>
+  <section class="roadmap">
+    <app-card *ngFor="let x of datas" [data]="x"></app-card>
+  </section>
+</div>

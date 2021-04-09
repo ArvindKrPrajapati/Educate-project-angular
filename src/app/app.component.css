@@ -1,5 +1,9 @@
-.example-spacer {}
-
+ .back-home-in-menu{
+   width:100%;
+   text-align: left;
+   padding:5px;
+   padding-left:25px;
+ }
 .menu {
   width: 200px;
 }

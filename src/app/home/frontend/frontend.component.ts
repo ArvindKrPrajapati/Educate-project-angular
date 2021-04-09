@@ -8,6 +8,7 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class FrontendComponent implements OnInit {
  @Input() fronts:any[];
+ @Input() name:string;
   constructor( ) { }
 
   ngOnInit(): void {
