@@ -1,0 +1,30 @@
+.main {
+  margin-top: 18px;
+}
+
+.container {
+margin-bottom: 10px;
+  overflow: scroll;
+  display: grid;
+  grid-template-columns: repeat(10,1fr);
+  grid-gap: 10px;
+}
+mat-card {
+  overflow: hidden;
+  margin-left: 10px;
+  width: 100px;
+  height: 110px;
+}
+#img{
+  border:1px solid black;
+  height:80px;
+  height:80px;
+  border-radius:50%;
+  display: block;
+  margin: auto;
+  margin-bottom:5px;
+}
+h3{
+ line-height: 14px;
+  text-align: center;
+}

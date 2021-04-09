@@ -1,0 +1,64 @@
+.example-spacer {}
+
+.menu {
+  width: 200px;
+}
+.header {
+  padding-left: 5px;
+  padding-right: 5px;
+  color: white;
+  position: fixed;
+  z-index: 10;
+}
+mat-sidenav-container {
+  height: 100%;
+  background: #eeeeef;
+
+}
+mat-sidenav {
+  width: 250px;
+  height: 100%;
+}
+.small-toolbar {
+  position: fixed;
+  z-index: 30;
+}
+.space {
+  height: 60px;
+}
+.md-menu li {
+  list-style: none;
+  display: inline-block;
+}
+
+.md-menu {
+  margin-left: 150px;
+}
+.home {
+  margin-left: 2%;
+  width: 96%;
+}
+.footer {
+  width: 100%;
+  margin-left: 0%;
+}
+
+
+
+@media screen and (max-width:600px) {
+  .home {
+    width: 100%;
+    float: none;
+  }
+  mat-sidenav {
+    margin-top: 0px;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+    padding-left: 0px;
+  }
+  .space {
+    height: 0px;
+  }
+
+}

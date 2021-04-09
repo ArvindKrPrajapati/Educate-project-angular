@@ -1,0 +1,11 @@
+<article class="main">
+  <section class="container">
+    <mat-card class="mat-elevation-z0" *ngFor="let news of roadmap">
+      <img [src]="news.img" id="img" />
+      <p class="text" [style.color]="news.color">
+        {{news.text}}.......
+      </p>
+    </mat-card>
+  </section>
+  <a href="#" class="see-more">see more Roadmaps</a>
+</article>

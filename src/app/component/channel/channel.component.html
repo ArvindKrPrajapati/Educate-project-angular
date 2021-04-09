@@ -1,0 +1,9 @@
+<section class="main">
+  <article class="container">
+    <mat-card *ngFor="let channel of channels" (click)="goToYt(channel.link)">   
+   <img [src]="channel.img" id="img" />
+    <h3>{{channel.name}}</h3>
+    </mat-card>
+  </article>
+  <a href="#" class="see-more">see-more</a>
+</section>
