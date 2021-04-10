@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
+import { IData } from '../model/data.model';  
+import { Observable ,of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class YtchannelService {
- ytdata:any[]=[
+ ytdata:IData[]=[
    {
      id:1,
      name:"yahoo baba",
@@ -69,7 +71,13 @@ export class YtchannelService {
    ];
   constructor() { }
   
-  getYtchannel():any[]{
+  getYtchannel():IData[]{
     return this.ytdata;
   }
+
+  getYtchannelHttp(){
+    return of(this.ytdata);
+  }
+  
+  
 }

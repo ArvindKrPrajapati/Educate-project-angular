@@ -1,9 +1,13 @@
 <section class="main">
   <article class="container">
-    <mat-card *ngFor="let channel of channels" (click)="goToYt(channel.link)">   
-   <img [src]="channel.img" id="img" />
+    <div *ngFor="let channel of channels">   
+    <a [href]="channel.link" mat-button>
+     <mat-card class="mat-elevation-z3">
+     <img [src]="channel.img" id="img" />
     <h3>{{channel.name}}</h3>
     </mat-card>
+    </a>
+    </div>
   </article>
   <a routerLink="/category/youtube" class="see-more">see-more</a>
 </section>

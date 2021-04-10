@@ -15,13 +15,13 @@
     <div class="space"></div>
     <br>
     <mat-accordion>
-      <a mat-button class="back-home-in-menu" routerLink="/home">home</a>
+      <a mat-button (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/home">home</a>
       <mat-expansion-panel class="mat-elevation-z0">
         <mat-expansion-panel-header>
           Roadmap
         </mat-expansion-panel-header>
         <mat-nav-list>
-   <a mat-button class="back-home-in-menu" routerLink="/category/roadmap">see more</a>
+   <a mat-button  (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/category/roadmap">see more</a>
           <a mat-list-item href="#" *ngFor="let link of roadmap"> {{ link }} </a>
         </mat-nav-list>
       </mat-expansion-panel>
@@ -30,7 +30,7 @@
           FrontEnd
         </mat-expansion-panel-header>
         <mat-nav-list>
-   <a mat-button class="back-home-in-menu" routerLink="/category/frontend">see more</a>
+   <a mat-button (click)=" mobileLayout ? sidenav.close() : sidenav.open()" class="back-home-in-menu" routerLink="/category/frontend">see more</a>
           <a mat-list-item href="#" *ngFor="let link of frontend"> {{ link }} </a>
         </mat-nav-list>
       </mat-expansion-panel>
@@ -39,11 +39,11 @@
           BackEnd
         </mat-expansion-panel-header>
         <mat-nav-list>
-   <a mat-button class="back-home-in-menu" routerLink="/category/backend">see more</a>
+   <a mat-button (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/category/backend">see more</a>
           <a mat-list-item href="#" *ngFor="let link of backend"> {{ link }} </a>
         </mat-nav-list>
       </mat-expansion-panel>
-   <a mat-button class="back-home-in-menu" routerLink="/category/youtube">YT channel</a>
+   <a mat-button (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/category/youtube">YT channel</a>
     </mat-accordion>
   </mat-sidenav>
   <mat-sidenav-content>

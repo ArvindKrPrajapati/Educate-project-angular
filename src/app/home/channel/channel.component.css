@@ -7,11 +7,16 @@ margin-bottom: 10px;
   overflow: scroll;
   display: grid;
   grid-template-columns: repeat(10,1fr);
-  grid-gap: 10px;
+  
+}
+.container div{
+  padding: 10px;
+}
+a{
+  padding: 0px;
 }
 mat-card {
   overflow: hidden;
-  margin-left: 10px;
   width: 100px;
   height: 110px;
 }

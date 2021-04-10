@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { RoadmapComponent } from './category/roadmap.component';
+import { CourseComponent } from './course/course.component';
 
 const routes: Routes = [
   {
@@ -13,9 +14,12 @@ const routes: Routes = [
     component:RoadmapComponent
   },
   {
+    path:"course/:id",
+    component:CourseComponent
+  },
+  {
     path:'',
-    redirectTo:'/home',
-    pathMatch:'full'
+    component:HomeComponent
   }
 ];
 

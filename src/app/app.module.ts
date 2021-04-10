@@ -14,10 +14,15 @@ import { FooterComponent } from './home/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 
 import { NewsService } from './service/news.service';
+import { CourseService } from './service/course.service';
 import { DevelopmentService } from './service/development.service';
 import { YtchannelService } from './service/ytchannel.service';
 import { RoadmapComponent } from './category/roadmap.component';
 import { CardComponent } from './globalcomp/card/card.component';
+
+
+import { HttpClientModule } from '@angular/common/http';
+import { CourseComponent } from './course/course.component';
 
 @NgModule({
   declarations: [
@@ -28,16 +33,18 @@ import { CardComponent } from './globalcomp/card/card.component';
     FooterComponent,
     HomeComponent,
     RoadmapComponent,
-    CardComponent
+    CardComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [NewsService,DevelopmentService,YtchannelService],
+  providers: [NewsService,DevelopmentService,YtchannelService,CourseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

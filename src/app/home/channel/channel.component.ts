@@ -15,8 +15,5 @@ export class ChannelComponent implements OnInit {
     this.channels=this._service.getYtchannel();
   }
   
-  goToYt(link):void{
-    window.location.href=link;
-  }
 
 }
