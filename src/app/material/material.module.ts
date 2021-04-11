@@ -8,7 +8,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
-
+import {MatSelectModule} from '@angular/material/select';
 
 const material = [
   MatToolbarModule,
@@ -18,7 +18,8 @@ const material = [
   MatMenuModule,
   MatExpansionModule,
   MatListModule,
-  MatCardModule
+  MatCardModule,
+  MatSelectModule
 ];
 
 @NgModule({

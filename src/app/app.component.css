@@ -1,9 +1,18 @@
+mat-select{
+  padding:5px;
+  width:30px;
+}
+
+
 .social a{
   color:white;
   font-size:20px;
   padding:0px;
 }
-
+.darkTheme{
+  background:#2e2e2e;
+  color:white;
+}
 .title{
   letter-spacing: 1px;
 }

@@ -1,7 +1,7 @@
 <mat-sidenav-container>
-  <mat-sidenav class="sidenav" #sidenav [opened]="!mobileLayout"  [mode]="mode">
-    <mat-toolbar *ngIf="!mobileLayout" color="accent" class="mat-elevation-z5 small-toolbar">
-     <span class="title"> {{ title }} </span>
+  <mat-sidenav class="sidenav" #sidenav [opened]="!mobileLayout"  [mode]="mode" [class]="theme">
+    <mat-toolbar *ngIf="!mobileLayout" [color]="theme" class="mat-elevation-z5 small-toolbar" [class]="theme">
+      <span class="title"> {{ title }} </span>
       <section class="md-menu" *ngIf="!mobileLayout">
         <ul>
           <a mat-button routerLinkActive="header-active" routerLink="home"><li>Home</li></a>
@@ -19,20 +19,26 @@
           <a [href]="twitter"><i class="fa fa-twitter"></i></a>
         </button>
         <button mat-icon-button>
-         <a [href]="instagram"> <i class="fa fa-instagram"></i></a>
+          <a [href]="instagram"> <i class="fa fa-instagram"></i></a>
         </button>
+        <mat-select #mytheme (selectionChange)="changeTheme(mytheme.selected.value)">
+          <mat-option value="1">Accent Theme</mat-option>
+          <mat-option value="2">Warn Theme</mat-option>
+          <mat-option value="3">Primary Theme</mat-option>
+          <mat-option value="4">Dark Theme</mat-option>
+        </mat-select>
       </section>
-  </mat-toolbar>
+    </mat-toolbar>
     <div class="space"></div>
     <br>
-      <a mat-button routerLinkActive="active" (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/home">home</a>
-      <a mat-button routerLinkActive="active" (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/category/roadmap">Roadmap</a>
-      <a mat-button routerLinkActive="active" (click)=" mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/category/frontend">Frontend</a>
-      <a mat-button routerLinkActive="active" (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/category/backend">Backend</a>
-      <a mat-button routerLinkActive="active" (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/category/youtube">YT channel</a>
+    <a mat-button routerLinkActive="active" (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/home">home</a>
+    <a mat-button routerLinkActive="active" (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/category/roadmap">Roadmap</a>
+    <a mat-button routerLinkActive="active" (click)=" mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/category/frontend">Frontend</a>
+    <a mat-button routerLinkActive="active" (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/category/backend">Backend</a>
+    <a mat-button routerLinkActive="active" (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/category/youtube">YT channel</a>
   </mat-sidenav>
-  <mat-sidenav-content id="container">
-    <mat-toolbar class="header" [class.mat-elevation-z5]="mobileLayout" color="accent">
+  <mat-sidenav-content id="container" [class]="theme">
+    <mat-toolbar class="header" [class.mat-elevation-z5]="mobileLayout" [color]="theme" [class]="theme">
       <button *ngIf="mobileLayout" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="sidenav.toggle()">
         <mat-icon class="toggle">menu</mat-icon>
       </button>
@@ -42,22 +48,25 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item class="menu">
-          <span>facebook</span>
+        <button mat-menu-item class="menu" (click)="changeTheme(1)">
+          <span>Accent Theme(Def)</span>
         </button>
-        <button mat-menu-item>
-          <span>instagram</span>
+        <button mat-menu-item (click)="changeTheme(2)">
+          <span>Warn Theme</span>
         </button>
-        <a [href]="twitter" mat-bumat-button mat-menu-item>
-          <span>twitter</span>
-        </a>
+        <button mat-menu-item (click)="changeTheme(3)">
+          <span>Primary Theme</span>
+        </button>
+        <button mat-menu-item (click)="changeTheme(4)">
+          <span>Dark Theme</span>
+        </button>
       </mat-menu>
     </mat-toolbar>
     <div class="home">
       <router-outlet (activate)="onActive()"></router-outlet>
     </div>
     <div class="home footer">
-      <app-footer [data]="[facebook,twitter,instagram]"></app-footer>
+      <app-footer [data]="[facebook,twitter,instagram,footerTheme]"></app-footer>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

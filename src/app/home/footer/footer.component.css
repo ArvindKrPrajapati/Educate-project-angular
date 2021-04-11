@@ -17,7 +17,20 @@
    padding:15px;
    color: white;
   margin-top:30px;
-  background:#ef196f;
+ background:#ef196f;
+ border-top:1px solid gainsboro;
+}
+.accentTheme{
+background:#ef196f;
+}
+.warnTheme{
+  background:#f03106;
+}
+.primaryTheme{
+background:#2c36aa;
+}
+.darkTheme{
+  background:#2e2e2e;
 }
 .container{
   margin:20px;

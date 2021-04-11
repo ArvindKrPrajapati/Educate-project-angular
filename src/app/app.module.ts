@@ -25,6 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CourseComponent } from './course/course.component';
 import { BasicComponent } from './course/basic/basic.component';
 
+import { CookieService } from 'ngx-cookie-service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +49,7 @@ import { BasicComponent } from './course/basic/basic.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [NewsService,DevelopmentService,YtchannelService,CourseService],
+  providers: [NewsService,DevelopmentService,YtchannelService,CourseService,CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
