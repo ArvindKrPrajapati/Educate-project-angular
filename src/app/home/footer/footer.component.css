@@ -1,3 +1,18 @@
+ 
+.social a{
+  color:white;
+  font-size:30px;
+  padding:0px;
+}
+ .social mat-icon{
+   font-size:30px;
+   margin-top:8px;
+   margin-right:6px;
+ }
+ 
+ .social button{
+   margin-right:5px;
+ }
  .main{
    padding:15px;
    color: white;
@@ -15,9 +30,7 @@
    width:90%;
    margin:auto;
  }
- mat-icon,i{
-   font-size:30px;
- }
+ 
  .email-icon{
    font-size:16px;
  }
@@ -33,16 +46,7 @@
  table{
    margin-lefT:-4px;
  }
- .twitter{
-   padding-left:10px;
- }
- .insta{
-   padding-left: 2px;
- }
- .icons{
-   margin-top:-15px;
-   margin-left: 8px;
- }
+
 @media screen and (max-width:600px){
   .container{
     display: block;

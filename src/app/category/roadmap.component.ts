@@ -40,7 +40,7 @@ export class RoadmapComponent implements OnInit {
  
   ngOnInit(): void {
       this._route.paramMap.subscribe(param=>{
-      this.category=param.get('name');
+      this.category=param.get('id');
       this.getDetails();
     });
     

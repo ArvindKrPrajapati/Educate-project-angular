@@ -1,6 +1,6 @@
 <div class="main">
   <mat-card class="roadmap-card">
-    <h2>{{question}}</h2>
+    <h2>{{question}} | {{category}}r</h2>
     <p class="answer">
       {{answer}}
     </p>
@@ -10,4 +10,7 @@
   <section class="roadmap">
     <app-card *ngFor="let x of datas" [data]="x"></app-card>
   </section>
+  <br>
+ <a routerLink="/basic/1" mat-raised-button color="warn">Start with Basic Html,css,JavaScript</a>
+
 </div>

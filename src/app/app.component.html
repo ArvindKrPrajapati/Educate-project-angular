@@ -1,57 +1,42 @@
 <mat-sidenav-container>
   <mat-sidenav class="sidenav" #sidenav [opened]="!mobileLayout"  [mode]="mode">
     <mat-toolbar *ngIf="!mobileLayout" color="accent" class="mat-elevation-z5 small-toolbar">
-      {{ title }}
+     <span class="title"> {{ title }} </span>
       <section class="md-menu" *ngIf="!mobileLayout">
         <ul>
-          <a mat-button routerLink="home"><li>Home</li></a>
-          <a mat-button routerLink="/category/roadmap"><li>Roadmap</li></a>
-          <a mat-button routerLink="/category/frontend"><li>Frontend</li></a>
-          <a mat-button routerLink="/category/backend"><li>Backend</li></a>
-          <a mat-button routerLink="/category/youtube"><li>YTchannel</li></a>
+          <a mat-button routerLinkActive="header-active" routerLink="home"><li>Home</li></a>
+          <a mat-button routerLinkActive="header-active" routerLink="/category/roadmap"><li>Roadmap</li></a>
+          <a mat-button routerLinkActive="header-active" routerLink="/category/frontend"><li>Frontend</li></a>
+          <a mat-button routerLinkActive="header-active" routerLink="/category/backend"><li>Backend</li></a>
+          <a mat-button routerLinkActive="header-active" routerLink="/category/youtube"><li>YTchannel</li></a>
         </ul>
       </section>
-    </mat-toolbar>
+      <section class="social">
+        <button mat-icon-button>
+          <a [href]="facebook"><mat-icon>facebook</mat-icon></a>
+        </button>
+        <button mat-icon-button>
+          <a [href]="twitter"><i class="fa fa-twitter"></i></a>
+        </button>
+        <button mat-icon-button>
+         <a [href]="instagram"> <i class="fa fa-instagram"></i></a>
+        </button>
+      </section>
+  </mat-toolbar>
     <div class="space"></div>
     <br>
-    <mat-accordion>
-      <a mat-button (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/home">home</a>
-      <mat-expansion-panel class="mat-elevation-z0">
-        <mat-expansion-panel-header>
-          Roadmap
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-   <a mat-button  (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/category/roadmap">see more</a>
-          <a mat-list-item href="#" *ngFor="let link of roadmap"> {{ link }} </a>
-        </mat-nav-list>
-      </mat-expansion-panel>
-      <mat-expansion-panel class="mat-elevation-z0">
-        <mat-expansion-panel-header>
-          FrontEnd
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-   <a mat-button (click)=" mobileLayout ? sidenav.close() : sidenav.open()" class="back-home-in-menu" routerLink="/category/frontend">see more</a>
-          <a mat-list-item href="#" *ngFor="let link of frontend"> {{ link }} </a>
-        </mat-nav-list>
-      </mat-expansion-panel>
-      <mat-expansion-panel class="mat-elevation-z0">
-        <mat-expansion-panel-header>
-          BackEnd
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-   <a mat-button (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/category/backend">see more</a>
-          <a mat-list-item href="#" *ngFor="let link of backend"> {{ link }} </a>
-        </mat-nav-list>
-      </mat-expansion-panel>
-   <a mat-button (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/category/youtube">YT channel</a>
-    </mat-accordion>
+      <a mat-button routerLinkActive="active" (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/home">home</a>
+      <a mat-button routerLinkActive="active" (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/category/roadmap">Roadmap</a>
+      <a mat-button routerLinkActive="active" (click)=" mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/category/frontend">Frontend</a>
+      <a mat-button routerLinkActive="active" (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/category/backend">Backend</a>
+      <a mat-button routerLinkActive="active" (click)="mobileLayout ? sidenav.close() : null" class="back-home-in-menu" routerLink="/category/youtube">YT channel</a>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content id="container">
     <mat-toolbar class="header" [class.mat-elevation-z5]="mobileLayout" color="accent">
       <button *ngIf="mobileLayout" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="sidenav.toggle()">
         <mat-icon class="toggle">menu</mat-icon>
       </button>
-      <span> &nbsp;{{ title }}</span>
+      <span class="title"> &nbsp;{{ title }}</span>
       <span class="example-spacer"></span>
       <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" *ngIf="mobileLayout">
         <mat-icon>more_vert</mat-icon>
@@ -63,16 +48,16 @@
         <button mat-menu-item>
           <span>instagram</span>
         </button>
-        <button mat-menu-item>
+        <a [href]="twitter" mat-bumat-button mat-menu-item>
           <span>twitter</span>
-        </button>
+        </a>
       </mat-menu>
     </mat-toolbar>
     <div class="home">
-    <router-outlet></router-outlet>
+      <router-outlet (activate)="onActive()"></router-outlet>
     </div>
     <div class="home footer">
-      <app-footer></app-footer>
+      <app-footer [data]="[facebook,twitter,instagram]"></app-footer>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

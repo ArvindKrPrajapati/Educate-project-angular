@@ -23,6 +23,7 @@ import { CardComponent } from './globalcomp/card/card.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { CourseComponent } from './course/course.component';
+import { BasicComponent } from './course/basic/basic.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CourseComponent } from './course/course.component';
     HomeComponent,
     RoadmapComponent,
     CardComponent,
-    CourseComponent
+    CourseComponent,
+    BasicComponent
   ],
   imports: [
     BrowserModule,

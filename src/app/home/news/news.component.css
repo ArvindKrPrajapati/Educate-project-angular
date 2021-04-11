@@ -1,7 +1,10 @@
  .main{
 margin-top:70px;
  }
- 
+ .container a{
+   padding:0px;
+   white-space: pre-wrap;
+ }
  .container{
    padding: 10px;
    display: grid;
@@ -21,7 +24,6 @@ margin-top:70px;
  }
  
  #img{
-   position: absolute;
    z-index: 1;
    width:100%;
    height:100%;

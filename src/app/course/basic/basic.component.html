@@ -1,0 +1,16 @@
+<section *ngIf="ifBasic">
+  <app-course [basicId]="1"></app-course>
+  <app-course [basicId]="2"></app-course>
+  <app-course [basicId]="3"></app-course>
+</section>
+
+<section class="main" *ngIf="!ifBasic">
+ <h2>Roadmap to become {{data.name}} web developer</h2>
+ <h4>{{data.mess}}</h4>
+ <ul>
+   <li *ngFor="let a of data.tech">
+     {{a}}
+   </li>
+ </ul>
+ <a [routerLink]="['/category',data.name]" mat-raised-button color="warn">start {{data.name}} course for free</a>
+</section>
