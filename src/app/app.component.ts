@@ -9,7 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./app.component.css']
 }) 
 export class AppComponent implements OnInit {
-  title="greenhatSr";
+  title="educateMe";
   frontend=['Angular','ReactJs','VueJs','Angular Material'];
   backend=['Php','NodeJs','python','Ruby'];
   roadmap=['html5 and Css3','Frontend','Backend','Full stack'];
